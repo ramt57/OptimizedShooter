@@ -13,4 +13,14 @@ UCLASS()
 class OPTIMIZEDSHOOTER_API AShooterWeaponBase : public AShooterItemBase
 {
 	GENERATED_BODY()
+private:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weapon", meta = (AllowPrivateAccess = "true"))
+	class USoundCue* FireSound;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
+	class UAnimInstance* FireMontage;
+	
+public:
+	virtual void BeginPlay() override;
+	void FireWeapon() const;
 };
