@@ -19,16 +19,19 @@ public:
 
 	virtual void NativeInitializeAnimation() override;
 private:
-	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Movement",meta=(AllowPrivateAccess="true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Movement", meta=(AllowPrivateAccess="true"))
 	class AShooterCharacterBase* ShooterCharacterBase;
 
 	//Character lateral speed
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement", meta = (AllowPrivateAccess = "true"))
-	float speed;
+	float Speed;
 	//whether character is in air
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement", meta = (AllowPrivateAccess = "true"))
-	bool isInAir;
+	bool bIsInAir;
 	//whether character is accelerating
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement", meta = (AllowPrivateAccess = "true"))
-	bool isAccelerating;
+	bool bIsAccelerating;
+	/*Offset yaw used in strafing */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
+	float MovementOffset;
 };
